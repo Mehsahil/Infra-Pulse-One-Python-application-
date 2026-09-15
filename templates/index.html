@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfraPulse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="brand">InfraPulse</div>
+        <div class="subtitle">Local infrastructure health monitor</div>
+      </div>
+      <div class="status"><span class="dot"></span> SYSTEM ONLINE</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SERVER OVERVIEW</p>
+        <h1 id="hostname">Loading server...</h1>
+        <p id="platform">Collecting system information</p>
+      </div>
+      <div class="illustration">
+        <div class="server-box"><span></span><span></span><span></span></div>
+        <div class="spark spark1"></div>
+        <div class="spark spark2"></div>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="card metric-card">
+        <div class="label">CPU</div>
+        <div class="value"><span id="cpu">--</span><small>%</small></div>
+        <div class="bar"><i id="cpu-bar"></i></div>
+      </article>
+      <article class="card metric-card">
+        <div class="label">MEMORY</div>
+        <div class="value"><span id="memory">--</span><small>%</small></div>
+        <div class="bar"><i id="memory-bar"></i></div>
+      </article>
+      <article class="card metric-card">
+        <div class="label">DISK</div>
+        <div class="value"><span id="disk">--</span><small>%</small></div>
+        <div class="bar"><i id="disk-bar"></i></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card details">
+        <div class="section-title">SYSTEM DETAILS</div>
+        <div class="row"><span>Operating System</span><b id="os">--</b></div>
+        <div class="row"><span>Python</span><b id="python">--</b></div>
+        <div class="row"><span>Dashboard Updated</span><b id="updated">--</b></div>
+      </article>
+
+      <article class="card health">
+        <div class="section-title">SERVICE HEALTH</div>
+        <div class="service"><span><i class="mini-dot"></i> InfraPulse</span><b>Running</b></div>
+        <div class="service"><span><i class="mini-dot"></i> Python Runtime</span><b>Running</b></div>
+        <div class="service"><span><i class="mini-dot"></i> Host Machine</span><b>Online</b></div>
+      </article>
+    </section>
+
+    <footer>InfraPulse · Monitoring the machine running this application</footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
